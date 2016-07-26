@@ -23,6 +23,9 @@ var {name} = obj; //creates a new variable called name and sets it to obj.name
 require('style!css!foundation-sites/dist/foundation.min.css');
 $(document).foundation();
 
+//app css require
+require('style!css!applicationStyles');
+
 //Create our Router
 
 ReactDOM.render(    //pass two args, JSX and the app element
