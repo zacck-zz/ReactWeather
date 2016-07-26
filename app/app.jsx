@@ -19,6 +19,10 @@ var obj = {
 var {name} = obj; //creates a new variable called name and sets it to obj.name
 */
 
+//Load foundation
+require('style!css!foundation-sites/dist/foundation.min.css');
+$(document).foundation();
+
 //Create our Router
 
 ReactDOM.render(    //pass two args, JSX and the app element
