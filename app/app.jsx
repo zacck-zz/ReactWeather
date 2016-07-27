@@ -24,7 +24,7 @@ require('style!css!foundation-sites/dist/foundation.min.css');
 $(document).foundation();
 
 //app css require
-require('style!css!applicationStyles');
+require('style!css!sass!applicationStyles');
 
 //Create our Router
 
