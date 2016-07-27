@@ -18,7 +18,9 @@ var Weather = React.createClass({
     //using axios to fetch data
     this.setState({
       isLoading: true,
-      errorMessage: undefined
+      errorMessage: undefined,
+      location: undefined,
+      temp: undefined
     });
     openWeatherMap.getTemp(location).then(function (temp){
       that.setState({
@@ -33,6 +35,26 @@ var Weather = React.createClass({
       });
     });
 
+  },
+  componentDidMount: function() {
+    {/*Collect the query param name and value from the url*/}
+    var location = this.props.location.query.location;
+
+    if(location &&  location.length >0) {
+      this.handleSearch(location);
+      {/*Reset query String */}
+      window.location.hash = '#/';
+    }
+  },
+  componentWillReceiveProps: function (newprops) {
+    {/*Collect the query param name and value from the url*/}
+    var location = newprops.location.query.location;
+
+    if(location &&  location.length >0) {
+      this.handleSearch(location);
+      {/*Reset query String */}
+      window.location.hash = '#/';
+    }
   },
   render: function () {
     var {isLoading,location,temp,errorMessage} = this.state;
