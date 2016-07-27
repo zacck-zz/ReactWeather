@@ -46,10 +46,9 @@ var Weather = React.createClass({
       window.location.hash = '#/';
     }
   },
-  componentWillReceiveProps: function (newprops) {
+  componentWillReceiveProps: function (newProps) {
     {/*Collect the query param name and value from the url*/}
-    var location = newprops.location.query.location;
-
+    var location = newProps.location.query.location;
     if(location &&  location.length >0) {
       this.handleSearch(location);
       {/*Reset query String */}
